@@ -1,6 +1,6 @@
 //
 //  OnboardingView.swift
-//  Polskie Czytanki
+//  Світ Казок
 //
 
 import SwiftUI
@@ -22,20 +22,20 @@ struct OnboardingView: View {
     private let pages: [OnboardingPage] = [
         OnboardingPage(
             systemImage: "book.pages.fill",
-            title: "Witaj w Polskich Czytankach!",
-            subtitle: "Odkryj radość czytania razem z dzieckiem dzięki krótkim, kolorowym historiom.",
+            title: "Ласкаво просимо до Світу Казок!",
+            subtitle: "Відкрий радість читання разом із дитиною завдяки коротким, кольоровим історіям.",
             gradient: AppTheme.primaryGradient
         ),
         OnboardingPage(
             systemImage: "books.vertical.fill",
-            title: "Wybierz czytankę",
-            subtitle: "Przeglądaj 320 wyjątkowych opowiadań i wybierz tę, która Cię zainteresuje.",
+            title: "Обери казку",
+            subtitle: "Переглядай 320 унікальних оповідань і обирай ту, яка тебе зацікавить.",
             gradient: AppTheme.secondaryGradient
         ),
         OnboardingPage(
             systemImage: "speaker.wave.2.fill",
-            title: "Słuchaj i czytaj",
-            subtitle: "Posłuchaj nagrania lektora, a następnie spróbuj przeczytać tekst samodzielnie.",
+            title: "Слухай та читай",
+            subtitle: "Послухай запис диктора, а потім спробуй прочитати текст самостійно.",
             gradient: LinearGradient(
                 colors: [
                     Color(red: 0.99, green: 0.61, blue: 0.27),
@@ -47,14 +47,14 @@ struct OnboardingView: View {
         ),
         OnboardingPage(
             systemImage: "questionmark.circle.fill",
-            title: "Sprawdź zrozumienie",
-            subtitle: "Odpowiedz na pytania po każdej czytance i zbieraj gwiazdki za ukończone historie.",
+            title: "Перевір розуміння",
+            subtitle: "Відповідай на питання після кожної казки та збирай зірки за завершені історії.",
             gradient: AppTheme.successGradient
         ),
         OnboardingPage(
             systemImage: "sparkles",
-            title: "Zaczynamy!",
-            subtitle: "Wszystko gotowe. Czas zanurzyć się w świecie polskich czytanek.",
+            title: "Починаємо!",
+            subtitle: "Все готово. Час зануритися у світ казок.",
             gradient: LinearGradient(
                 colors: [
                     Color(red: 0.55, green: 0.36, blue: 0.95),
@@ -106,7 +106,7 @@ struct OnboardingView: View {
                     HapticManager.tap()
                     finish()
                 } label: {
-                    Text("Pomiń")
+                    Text("Пропустити")
                         .font(.appCaption.weight(.bold))
                         .foregroundStyle(.white)
                         .padding(.vertical, 10)
@@ -142,7 +142,7 @@ struct OnboardingView: View {
             }
         } label: {
             HStack(spacing: 12) {
-                Text(currentIndex == pages.count - 1 ? "Zaczynamy" : "Dalej")
+                Text(currentIndex == pages.count - 1 ? "Починаємо" : "Далі")
                     .font(.appButton)
                 Image(systemName: currentIndex == pages.count - 1 ? "sparkles" : "arrow.right")
                     .font(.title2.weight(.bold))

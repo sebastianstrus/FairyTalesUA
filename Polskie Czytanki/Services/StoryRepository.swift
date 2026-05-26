@@ -1,6 +1,6 @@
 //
 //  StoryRepository.swift
-//  Polskie Czytanki
+//  Світ Казок
 //
 
 import Foundation
@@ -14,8 +14,8 @@ final class StoryRepository {
     }
 
     private func loadStories() {
-        guard let url = Bundle.main.url(forResource: "stories_pl", withExtension: "json") else {
-            assertionFailure("stories_pl.json missing from bundle")
+        guard let url = Bundle.main.url(forResource: "stories_ua", withExtension: "json") else {
+            assertionFailure("stories_ua.json missing from bundle")
             return
         }
         do {

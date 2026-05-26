@@ -1,6 +1,6 @@
 //
 //  SettingsView.swift
-//  Polskie Czytanki
+//  Світ Казок
 //
 
 import SwiftUI
@@ -36,7 +36,7 @@ struct SettingsView: View {
                         premiumRow
                     }
 
-                    sectionHeader("Odtwarzanie")
+                    sectionHeader("Відтворення")
                     SettingsCard {
                         Toggle(isOn: $bindableSettings.showPlayButton) {
                             HStack(spacing: 14) {
@@ -46,10 +46,10 @@ struct SettingsView: View {
                                     .frame(width: 40, height: 40)
                                     .background(AppTheme.primaryGradient, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
                                 VStack(alignment: .leading, spacing: 2) {
-                                    Text("Pokaż przycisk odtwarzania")
+                                    Text("Показати кнопку відтворення")
                                         .font(.appHeadline)
                                         .foregroundStyle(.primary)
-                                    Text("Ukryj go, aby dziecko mogło czytać bez dźwięku.")
+                                    Text("Сховай її, щоб дитина могла читати без звуку.")
                                         .font(.appCaption)
                                         .foregroundStyle(.secondary)
                                         .fixedSize(horizontal: false, vertical: true)
@@ -62,7 +62,7 @@ struct SettingsView: View {
                         }
                     }
 
-                    sectionHeader("Wprowadzenie")
+                    sectionHeader("Вступ")
                     SettingsCard {
                         Button {
                             HapticManager.tap()
@@ -75,10 +75,10 @@ struct SettingsView: View {
                                     .frame(width: 40, height: 40)
                                     .background(AppTheme.secondaryGradient, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
                                 VStack(alignment: .leading, spacing: 2) {
-                                    Text("Pokaż wprowadzenie")
+                                    Text("Показати вступ")
                                         .font(.appHeadline)
                                         .foregroundStyle(.primary)
-                                    Text("Zobacz ponownie ekrany powitalne aplikacji.")
+                                    Text("Подивися знову вітальні екрани програми.")
                                         .font(.appCaption)
                                         .foregroundStyle(.secondary)
                                         .fixedSize(horizontal: false, vertical: true)
@@ -92,7 +92,7 @@ struct SettingsView: View {
                         .buttonStyle(.plain)
                     }
 
-                    sectionHeader("Postęp")
+                    sectionHeader("Прогрес")
                     SettingsCard {
                         Button {
                             HapticManager.warning()
@@ -115,10 +115,10 @@ struct SettingsView: View {
                                         in: RoundedRectangle(cornerRadius: 12, style: .continuous)
                                     )
                                 VStack(alignment: .leading, spacing: 2) {
-                                    Text("Zresetuj postęp")
+                                    Text("Скинути прогрес")
                                         .font(.appHeadline)
                                         .foregroundStyle(.primary)
-                                    Text("Ukończone: \(progress.completedCount)")
+                                    Text("Завершено: \(progress.completedCount)")
                                         .font(.appCaption)
                                         .foregroundStyle(.secondary)
                                 }
@@ -140,12 +140,12 @@ struct SettingsView: View {
                 .padding(20)
             }
         }
-        .navigationTitle(Text("Ustawienia"))
+        .navigationTitle(Text("Налаштування"))
         .navigationBarTitleDisplayMode(.inline)
         .toolbarBackground(Color(red: 1.00, green: 0.95, blue: 0.84), for: .navigationBar)
         .toolbarBackground(.visible, for: .navigationBar)
         .confirmationDialog(
-            Text("Zresetować cały postęp?"),
+            Text("Скинути весь прогрес?"),
             isPresented: $showResetConfirmation,
             titleVisibility: .visible
         ) {
@@ -153,13 +153,13 @@ struct SettingsView: View {
                 HapticManager.success()
                 progress.resetAll()
             } label: {
-                Text("Resetuj")
+                Text("Скинути")
             }
             Button(role: .cancel) {} label: {
-                Text("Anuluj")
+                Text("Скасувати")
             }
         } message: {
-            Text("Spowoduje to wyczyszczenie ukończenia wszystkich 320 czytanek.")
+            Text("Це очистить завершення усіх 320 казок.")
         }
         .fullScreenCover(isPresented: $showOnboarding) {
             OnboardingView {}
@@ -179,10 +179,10 @@ struct SettingsView: View {
                     .frame(width: 40, height: 40)
                     .background(AppTheme.successGradient, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
                 VStack(alignment: .leading, spacing: 2) {
-                    Text("Premium aktywne")
+                    Text("Premium активний")
                         .font(.appHeadline)
                         .foregroundStyle(.primary)
-                    Text("Masz dostęp do wszystkich 320 czytanek.")
+                    Text("Ти маєш доступ до всіх 320 казок.")
                         .font(.appCaption)
                         .foregroundStyle(.secondary)
                         .fixedSize(horizontal: false, vertical: true)
@@ -205,10 +205,10 @@ struct SettingsView: View {
                             .frame(width: 40, height: 40)
                             .background(AppTheme.secondaryGradient, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
                         VStack(alignment: .leading, spacing: 2) {
-                            Text("Aktywuj Premium")
+                            Text("Активувати Premium")
                                 .font(.appHeadline)
                                 .foregroundStyle(.primary)
-                            Text("Odblokuj wszystkie czytanki na zawsze.")
+                            Text("Розблокуй усі казки назавжди.")
                                 .font(.appCaption)
                                 .foregroundStyle(.secondary)
                                 .fixedSize(horizontal: false, vertical: true)
@@ -234,10 +234,10 @@ struct SettingsView: View {
                             .frame(width: 40, height: 40)
                             .background(AppTheme.primaryGradient, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
                         VStack(alignment: .leading, spacing: 2) {
-                            Text("Przywróć zakup")
+                            Text("Відновити покупку")
                                 .font(.appHeadline)
                                 .foregroundStyle(.primary)
-                            Text("Jeśli już kupiłeś Premium na tym koncie.")
+                            Text("Якщо ти вже купив Premium на цьому акаунті.")
                                 .font(.appCaption)
                                 .foregroundStyle(.secondary)
                                 .fixedSize(horizontal: false, vertical: true)
@@ -255,7 +255,7 @@ struct SettingsView: View {
 
     private var versionLabel: some View {
         VStack(spacing: 4) {
-            Text("Polskie Czytanki")
+            Text("Світ Казок")
                 .font(.appCaption.weight(.bold))
                 .foregroundStyle(.secondary)
             Text(versionString)
@@ -269,7 +269,7 @@ struct SettingsView: View {
         let info = Bundle.main.infoDictionary
         let version = info?["CFBundleShortVersionString"] as? String ?? "1.0"
         let build = info?["CFBundleVersion"] as? String ?? "1"
-        return "Wersja \(version) (\(build))"
+        return "Версія \(version) (\(build))"
     }
 
     private func sectionHeader(_ key: LocalizedStringKey) -> some View {

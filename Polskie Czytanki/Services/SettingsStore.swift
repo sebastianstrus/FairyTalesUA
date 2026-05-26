@@ -1,6 +1,6 @@
 //
 //  SettingsStore.swift
-//  Polskie Czytanki
+//  Світ Казок
 //
 
 import Foundation

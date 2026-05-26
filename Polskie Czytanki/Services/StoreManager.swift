@@ -1,6 +1,6 @@
 //
 //  StoreManager.swift
-//  Polskie Czytanki
+//  Світ Казок
 //
 
 import Foundation
@@ -16,7 +16,7 @@ enum StorePurchaseError: Error {
 
 @Observable
 final class StoreManager {
-    static let premiumProductID = "com.sebastianstrus.polskieczytanki.premium"
+    static let premiumProductID = "com.sebastianstrus.fairytalesua.premium"
     static let freeStoryLimit = 3
 
     private(set) var products: [Product] = []
@@ -73,7 +73,7 @@ final class StoreManager {
             }
         }
         if products.isEmpty && lastError == nil {
-            lastError = "Nie udało się załadować produktu. Sprawdź połączenie i spróbuj ponownie."
+            lastError = "Не вдалося завантажити продукт. Перевір з'єднання і спробуй ще раз."
         }
     }
 
@@ -84,7 +84,7 @@ final class StoreManager {
         }
         guard let product = premiumProduct else {
             if lastError == nil {
-                lastError = "Produkt jest niedostępny. Spróbuj ponownie za chwilę."
+                lastError = "Продукт недоступний. Спробуй ще раз за мить."
             }
             return false
         }
@@ -102,7 +102,7 @@ final class StoreManager {
             case .userCancelled:
                 return false
             case .pending:
-                lastError = "Zakup oczekuje na zatwierdzenie."
+                lastError = "Покупка очікує на затвердження."
                 return false
             @unknown default:
                 return false

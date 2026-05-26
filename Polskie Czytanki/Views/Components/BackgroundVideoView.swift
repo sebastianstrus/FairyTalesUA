@@ -1,6 +1,6 @@
 //
 //  BackgroundVideoView.swift
-//  Polskie Czytanki
+//  Світ Казок
 //
 
 import AVFoundation

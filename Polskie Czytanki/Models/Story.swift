@@ -1,6 +1,6 @@
 //
 //  Story.swift
-//  Polskie Czytanki
+//  Світ Казок
 //
 
 import Foundation
@@ -16,9 +16,9 @@ struct Story: Identifiable, Decodable, Hashable {
         return Int(digits) ?? 0
     }
 
-    var smallImageName: String { "pl\(number)" }
+    var smallImageName: String { "ua\(number)" }
     var largeImageName: String { "image_\(number)" }
-    var audioFileName: String { "pl\(number)" }
+    var audioFileName: String { "ua\(number)" }
 }
 
 struct Question: Decodable, Hashable {

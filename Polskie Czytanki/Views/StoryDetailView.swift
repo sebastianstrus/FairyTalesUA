@@ -1,6 +1,6 @@
 //
 //  StoryDetailView.swift
-//  Polskie Czytanki
+//  Світ Казок
 //
 
 import SwiftUI
@@ -82,7 +82,7 @@ struct StoryDetailView: View {
         .toolbarBackground(.visible, for: .navigationBar)
         .toolbar {
             ToolbarItem(placement: .principal) {
-                Text("Czytanka \(story.number)")
+                Text("Казка \(story.number)")
                     .font(.appHeadline)
                     .foregroundStyle(Color.black)
             }
@@ -121,7 +121,7 @@ struct StoryDetailView: View {
                     .contentTransition(.symbolEffect(.replace))
             }
         }
-        .accessibilityLabel(Text(isPlayingThis ? "Wstrzymaj dźwięk" : "Odtwórz dźwięk"))
+        .accessibilityLabel(Text(isPlayingThis ? "Призупинити звук" : "Відтворити звук"))
     }
 
     private var header: some View {
@@ -176,7 +176,7 @@ struct StoryDetailView: View {
 
     private var actionFooter: some View {
         PrimaryButton(
-            "Sprawdź odpowiedzi",
+            "Перевірити відповіді",
             systemImage: "checkmark.seal.fill",
             gradient: AppTheme.primaryGradient
         ) {
@@ -225,14 +225,14 @@ struct StoryDetailView: View {
 #Preview {
     NavigationStack {
         StoryDetailView(story: Story(
-            id: "pl1",
-            title: "Zaczarowany Ogród Lili",
-            text: "Lila uwielbiała spędzać czas w ogrodzie swojej babci...",
+            id: "ua1",
+            title: "Чарівний сад Лілі",
+            text: "Ліля любила проводити час у саду своєї бабусі...",
             questions: [
                 Question(
-                    question: "Gdzie Lila znalazła kluczyk?",
-                    options: ["Pod jabłonią", "Pod różą", "W studni", "W szafce"],
-                    correctAnswer: "Pod różą"
+                    question: "Де Ліля знайшла ключик?",
+                    options: ["Під яблунею", "Під трояндою", "У криниці", "У шафці"],
+                    correctAnswer: "Під трояндою"
                 )
             ]
         ))

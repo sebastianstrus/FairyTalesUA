@@ -1,6 +1,6 @@
 //
 //  StoryListView.swift
-//  Polskie Czytanki
+//  Світ Казок
 //
 
 import SwiftUI
@@ -69,11 +69,11 @@ struct StoryListView: View {
                 }
             }
         }
-        .navigationTitle(Text("Czytanki"))
+        .navigationTitle(Text("Казки"))
         .navigationBarTitleDisplayMode(.inline)
         .toolbarBackground(Color(red: 1.00, green: 0.95, blue: 0.84), for: .navigationBar)
         .toolbarBackground(.visible, for: .navigationBar)
-        .searchable(text: $searchText, prompt: Text("Szukaj czytanek"))
+        .searchable(text: $searchText, prompt: Text("Шукати казки"))
         .fullScreenCover(isPresented: $showPaywall) {
             PaywallView()
         }
@@ -92,10 +92,10 @@ struct StoryListView: View {
                     .background(Color.white.opacity(0.22), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
 
                 VStack(alignment: .leading, spacing: 2) {
-                    Text("Odblokuj wszystkie czytanki")
+                    Text("Розблокуй усі казки")
                         .font(.appHeadline)
                         .foregroundStyle(.white)
-                    Text("Pierwsze \(StoreManager.freeStoryLimit) są darmowe. Reszta z Premium.")
+                    Text("Перші \(StoreManager.freeStoryLimit) безкоштовні. Решта з Premium.")
                         .font(.appCaption)
                         .foregroundStyle(.white.opacity(0.95))
                         .fixedSize(horizontal: false, vertical: true)
@@ -133,7 +133,7 @@ struct StoryListView: View {
                     Image(systemName: "star.circle.fill")
                         .font(.title3)
                         .foregroundStyle(AppTheme.primaryGradient)
-                    Text("Twój postęp")
+                    Text("Твій прогрес")
                         .font(.appHeadline)
                         .foregroundStyle(.primary)
                 }

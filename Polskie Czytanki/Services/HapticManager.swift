@@ -1,6 +1,6 @@
 //
 //  HapticManager.swift
-//  Polskie Czytanki
+//  Світ Казок
 //
 
 import UIKit

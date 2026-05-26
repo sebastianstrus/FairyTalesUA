@@ -1,6 +1,6 @@
 //
 //  ShakeEffect.swift
-//  Polskie Czytanki
+//  Світ Казок
 //
 
 import SwiftUI

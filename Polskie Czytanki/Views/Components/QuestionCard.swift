@@ -1,6 +1,6 @@
 //
 //  QuestionCard.swift
-//  Polskie Czytanki
+//  Світ Казок
 //
 
 import SwiftUI
@@ -21,7 +21,7 @@ struct QuestionCard: View {
                     .frame(width: 32, height: 32)
                     .background(AppTheme.secondaryGradient, in: Circle())
 
-                Text("Pytanie \(questionNumber) z \(totalQuestions)")
+                Text("Питання \(questionNumber) з \(totalQuestions)")
                     .font(.appCaption.weight(.bold))
                     .foregroundStyle(.secondary)
                     .textCase(.uppercase)

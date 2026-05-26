@@ -1,6 +1,6 @@
 //
 //  PaywallView.swift
-//  Polskie Czytanki
+//  Світ Казок
 //
 
 import SwiftUI
@@ -72,10 +72,10 @@ struct PaywallView: View {
         .onChange(of: store.isPremium) { _, newValue in
             if newValue { dismiss() }
         }
-        .alert("Coś poszło nie tak", isPresented: $showErrorAlert) {
+        .alert("Щось пішло не так", isPresented: $showErrorAlert) {
             Button("OK", role: .cancel) {}
         } message: {
-            Text(store.lastError ?? "Spróbuj ponownie później.")
+            Text(store.lastError ?? "Спробуй ще раз пізніше.")
         }
     }
 
@@ -92,7 +92,7 @@ struct PaywallView: View {
                     .background(.ultraThinMaterial, in: Circle())
                     .overlay(Circle().stroke(Color.white.opacity(0.4), lineWidth: 1))
             }
-            .accessibilityLabel(Text("Zamknij"))
+            .accessibilityLabel(Text("Закрити"))
             Spacer()
         }
         .frame(height: 44)
@@ -122,14 +122,14 @@ struct PaywallView: View {
 
     private var titleBlock: some View {
         VStack(spacing: isCompact ? 6 : 10) {
-            Text("Odblokuj wszystkie czytanki")
+            Text("Розблокуй усі казки")
                 // Shrink title typography layout dynamically
                 .font(.system(size: isCompact ? 24 : 30, weight: .heavy, design: .rounded))
                 .foregroundStyle(.white)
                 .multilineTextAlignment(.center)
                 .shadow(color: .black.opacity(0.35), radius: 8, y: 3)
 
-            Text("Jednorazowy zakup. Dostęp na zawsze.")
+            Text("Одноразова покупка. Доступ назавжди.")
                 .font(isCompact ? .footnote : .appSubtitle)
                 .foregroundStyle(.white.opacity(0.95))
                 .multilineTextAlignment(.center)
@@ -141,10 +141,10 @@ struct PaywallView: View {
 
     private var benefitsList: some View {
         VStack(spacing: isCompact ? 8 : 12) { // Pack items tighter on iPhone
-            benefitRow(icon: "books.vertical.fill", title: "320 czytanek", subtitle: "Pełna kolekcja krótkich historii.")
-            benefitRow(icon: "speaker.wave.2.fill", title: "Nagrania lektora", subtitle: "Wszystkie nagrania dźwiękowe.")
-            benefitRow(icon: "questionmark.circle.fill", title: "Pytania i quizy", subtitle: "Sprawdź zrozumienie po każdej czytance.")
-            benefitRow(icon: "infinity", title: "Dostęp na zawsze", subtitle: "Jeden zakup, bez subskrypcji.")
+            benefitRow(icon: "books.vertical.fill", title: "320 казок", subtitle: "Повна колекція коротких історій.")
+            benefitRow(icon: "speaker.wave.2.fill", title: "Записи диктора", subtitle: "Усі звукові записи.")
+            benefitRow(icon: "questionmark.circle.fill", title: "Питання та вікторини", subtitle: "Перевір розуміння після кожної казки.")
+            benefitRow(icon: "infinity", title: "Доступ назавжди", subtitle: "Одна покупка, без підписок.")
         }
         .opacity(appeared ? 1.0 : 0)
         .offset(y: appeared ? 0 : 30)
@@ -221,19 +221,19 @@ struct PaywallView: View {
 
     private var purchaseButtonTitle: String {
         if store.isLoadingProducts {
-            return "Ładowanie..."
+            return "Завантаження..."
         }
         if let product = store.premiumProduct {
-            return "Kup za \(product.displayPrice)"
+            return "Купити за \(product.displayPrice)"
         }
-        return "Produkt niedostępny"
+        return "Продукт недоступний"
     }
 
     private var restoreButton: some View {
         Button {
             Task { await handleRestore() }
         } label: {
-            Text("Przywróć zakup")
+            Text("Відновити покупку")
                 .font(.system(size: isCompact ? 11 : 12, weight: .bold, design: .rounded))
                 .foregroundStyle(.white)
                 .padding(.vertical, isCompact ? 6 : 10)
@@ -245,7 +245,7 @@ struct PaywallView: View {
     }
 
     private var legalText: some View {
-        Text("Jednorazowa płatność. Bez automatycznego odnawiania.")
+        Text("Одноразова оплата. Без автоматичного поновлення.")
             .font(.system(size: isCompact ? 10 : 11, weight: .regular, design: .rounded))
             .foregroundStyle(.white.opacity(0.8))
             .multilineTextAlignment(.center)

@@ -1,6 +1,6 @@
 //
 //  Polskie_CzytankiApp.swift
-//  Polskie Czytanki
+//  Світ Казок
 //
 
 import SwiftUI
@@ -23,7 +23,7 @@ struct Polskie_CzytankiApp: App {
                 .environment(store)
                 .tint(Color(red: 0.96, green: 0.31, blue: 0.51))
                 .preferredColorScheme(.light)
-                .environment(\.locale, Locale(identifier: "pl"))
+                .environment(\.locale, Locale(identifier: "uk"))
                 .task {
                     await store.loadProducts()
                 }
